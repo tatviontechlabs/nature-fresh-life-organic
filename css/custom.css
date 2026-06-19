@@ -918,3 +918,59 @@ textarea:focus-visible {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ── Navbar & Footer Logo Size Fixes (for images with transparent padding) ── */
+.nav-logo-desktop {
+  height: 110px !important;
+  margin-top: -28px !important;
+  margin-bottom: -28px !important;
+  object-fit: contain;
+  max-width: none !important;
+}
+
+.nav-logo-mobile {
+  height: 95px !important;
+  margin-top: -26px !important;
+  margin-bottom: -26px !important;
+  object-fit: contain;
+  max-width: none !important;
+}
+
+.footer-logo-custom {
+  height: 140px !important;
+  margin-top: -38px !important;
+  margin-bottom: -20px !important;
+  object-fit: contain;
+  max-width: none !important;
+}
+
+/* ── Hero Image Slider ── */
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slide .slide-content {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.hero-slide.active .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-dot.active {
+  background-color: var(--nfl-green) !important;
+  width: 24px !important;
+  border-radius: 6px !important;
+}
+

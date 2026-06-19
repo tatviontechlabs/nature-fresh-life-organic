@@ -16,7 +16,7 @@
       theme: { extend: { colors: { 'nfl-green': '#8CC63F', 'nfl-dark-green': '#2E7D32', 'nfl-orange': '#F7931E', 'nfl-light': '#F5F7F9' }, fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'], 'display': ['Outfit', 'system-ui', 'sans-serif'] } } }
     }
   </script>
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/custom.css?v=1.0.2" />
 </head>
 <body class="bg-white">
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -26,7 +26,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3" aria-label="NFL Home">
-          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic Logo" class="h-14 w-auto" />
+          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic Logo" class="nav-logo-desktop" />
         </a>
         <div class="hidden lg:flex items-center gap-8">
           <a href="index.html" class="nav-link text-gray-700 hover:text-nfl-dark-green font-medium">Home</a>
@@ -46,7 +46,7 @@
     <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden">
       <div class="p-6">
         <div class="flex items-center justify-between mb-8">
-          <img src="assets/logo/nfl-logo.png" alt="NFL" class="h-12" />
+          <img src="assets/logo/nfl-logo.png" alt="NFL" class="nav-logo-mobile" />
           <button onclick="document.getElementById('hamburger').click()" class="p-2 text-gray-500" aria-label="Close menu">
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
@@ -272,7 +272,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
-          <img src="assets/logo/nfl-logo.png" alt="NFL" class="h-16 mb-4 brightness-0 invert" />
+          <img src="assets/logo/nfl-logo.png" alt="NFL" class="footer-logo-custom brightness-0 invert" />
           <p class="text-gray-400 text-sm">Premium organic fertilizers & agricultural inputs. ISO 9001:2015 Certified.</p>
         </div>
         <div>
@@ -312,7 +312,8 @@
     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
   </button>
 
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js?v=1.0.2"></script>
   <script src="js/quote.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/custom.css?v=1.0.2" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -90,7 +90,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3" aria-label="NFL Home">
-          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic Logo" class="h-14 w-auto" />
+          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic Logo" class="nav-logo-desktop" />
         </a>
 
         <!-- Desktop Navigation -->
@@ -118,7 +118,7 @@
     <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden">
       <div class="p-6">
         <div class="flex items-center justify-between mb-8">
-          <img src="assets/logo/nfl-logo.png" alt="NFL" class="h-12" />
+          <img src="assets/logo/nfl-logo.png" alt="NFL" class="nav-logo-mobile" />
           <button onclick="document.getElementById('hamburger').click()" class="p-2 text-gray-500 hover:text-gray-700" aria-label="Close menu">
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -150,41 +150,118 @@
        HERO SECTION
        ═══════════════════════════════════════════ -->
   <main id="main">
-    <section class="hero-section" style="background-image: url('assets/images/hero-banner.png');">
-      <!-- Floating Leaf Decorations -->
-      <svg class="hero-leaf w-24 h-24" viewBox="0 0 100 100" fill="white">
-        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
-      </svg>
-      <svg class="hero-leaf w-16 h-16" viewBox="0 0 100 100" fill="white">
-        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
-      </svg>
-      <svg class="hero-leaf w-20 h-20" viewBox="0 0 100 100" fill="white">
-        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
-      </svg>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="max-w-3xl">
-          <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            🌱 ISO 9001:2015 Certified Company
-          </span>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Empowering<br />
-            <span class="text-nfl-green">Sustainable</span> Agriculture
-          </h1>
-          <p class="text-white/90 text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl">
-            Premium organic fertilizers, micronutrients, and crop nutrition solutions that improve soil health, increase productivity, and support eco-friendly farming — <span class="font-medium italic">प्रकृति की शक्ति, फसल की समृद्धि</span>
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="products.html" class="btn-orange text-base px-8 py-4 justify-center">
-              Explore Products
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-            <a href="quote.html" class="btn-secondary border-white text-white hover:bg-white hover:text-nfl-dark-green text-base px-8 py-4 justify-center">
-              Request a Quote
-            </a>
+    <section class="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-[#2E7D32]">
+      <!-- Slides Wrapper -->
+      <div id="heroSlider" class="absolute inset-0">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide active absolute inset-0 flex items-center transition-all duration-1000 ease-in-out opacity-100 z-10" style="background-image: linear-gradient(135deg, rgba(46, 125, 50, 0.85), rgba(140, 198, 63, 0.7)), url('assets/images/hero-banner.png'); background-size: cover; background-position: center;">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="max-w-3xl slide-content">
+              <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                🌱 ISO 9001:2015 Certified Company
+              </span>
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Empowering<br />
+                <span class="text-nfl-green">Sustainable</span> Agriculture
+              </h1>
+              <p class="text-white/90 text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl">
+                Premium organic fertilizers, micronutrients, and crop nutrition solutions that improve soil health, increase productivity, and support eco-friendly farming — <span class="font-medium italic">प्रकृति की शक्ति, फसल की समृद्धि</span>
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="products.html" class="btn-orange text-base px-8 py-4 justify-center">
+                  Explore Products
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="quote.html" class="btn-secondary border-white text-white hover:bg-white hover:text-nfl-dark-green text-base px-8 py-4 justify-center">
+                  Request a Quote
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide absolute inset-0 flex items-center transition-all duration-1000 ease-in-out opacity-0 z-0" style="background-image: linear-gradient(135deg, rgba(46, 125, 50, 0.85), rgba(140, 198, 63, 0.7)), url('assets/images/hero-banner-soil.png'); background-size: cover; background-position: center;">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="max-w-3xl slide-content opacity-0 translate-y-6 transition-all duration-700">
+              <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                🌿 100% Organic & Eco-Friendly
+              </span>
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Revitalize Soil<br />
+                <span class="text-nfl-green">Health & Fertility</span>
+              </h1>
+              <p class="text-white/90 text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl">
+                Enrich your fields with our premium organic fertilizers and soil conditioners. Natural ingredients designed to restore essential nutrients, enhance root growth, and boost microbial activity.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="products.html?category=Soil%20Conditioners" class="btn-orange text-base px-8 py-4 justify-center">
+                  View Soil Conditioners
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="quote.html" class="btn-secondary border-white text-white hover:bg-white hover:text-nfl-dark-green text-base px-8 py-4 justify-center">
+                  Request a Quote
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide absolute inset-0 flex items-center transition-all duration-1000 ease-in-out opacity-0 z-0" style="background-image: linear-gradient(135deg, rgba(46, 125, 50, 0.85), rgba(140, 198, 63, 0.7)), url('assets/images/hero-banner-crops.png'); background-size: cover; background-position: center;">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="max-w-3xl slide-content opacity-0 translate-y-6 transition-all duration-700">
+              <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                💧 Advanced Crop Nutrition
+              </span>
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Maximize Crop<br />
+                <span class="text-nfl-green">Yield & Quality</span>
+              </h1>
+              <p class="text-white/90 text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl">
+                Scientific water-soluble fertilizers and micronutrients designed for rapid absorption and complete crop nourishment. Deliver balanced nutrients for healthy growth and bumper harvests.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="products.html?category=Micronutrients" class="btn-orange text-base px-8 py-4 justify-center">
+                  View Micronutrients
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="quote.html" class="btn-secondary border-white text-white hover:bg-white hover:text-nfl-dark-green text-base px-8 py-4 justify-center">
+                  Request a Quote
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Slider Navigation Arrows -->
+      <button id="heroPrev" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center border border-white/20 transition-all backdrop-blur-sm focus:outline-none" aria-label="Previous slide">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="heroNext" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center border border-white/20 transition-all backdrop-blur-sm focus:outline-none" aria-label="Next slide">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <!-- Slider Indicator Dots -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/70 transition-all focus:outline-none active" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/70 transition-all focus:outline-none" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/70 transition-all focus:outline-none" data-slide="2" aria-label="Go to slide 3"></button>
+      </div>
+
+      <!-- Floating Leaf Decorations -->
+      <svg class="hero-leaf w-24 h-24 pointer-events-none" viewBox="0 0 100 100" fill="white">
+        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
+      </svg>
+      <svg class="hero-leaf w-16 h-16 pointer-events-none" viewBox="0 0 100 100" fill="white">
+        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
+      </svg>
+      <svg class="hero-leaf w-20 h-20 pointer-events-none" viewBox="0 0 100 100" fill="white">
+        <path d="M50 5 Q70 20 60 50 Q50 80 30 60 Q10 40 30 20 Q40 12 50 5Z"/>
+      </svg>
     </section>
 
     <!-- ═══════════════════════════════════════════
@@ -586,7 +663,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <!-- Company Info -->
         <div>
-          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic" class="h-16 mb-4 brightness-0 invert" />
+          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic" class="footer-logo-custom brightness-0 invert" />
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Premium organic fertilizers & agricultural inputs for sustainable farming. ISO 9001:2015 Certified.</p>
           <!-- Social Links Placeholder -->
           <div class="flex gap-3">
@@ -672,7 +749,7 @@
   </button>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=1.0.2"></script>
 
   <!-- Featured Products Inline Script (loads from JSON) -->
   <script>

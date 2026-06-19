@@ -4,11 +4,22 @@
    - Auto-fill product from URL param
    - Populate product dropdown from JSON
    - Client-side validation
-   - EmailJS integration placeholder
+   - EmailJS integration
    - Toast notifications
    ============================================ */
 
+const EMAILJS_PUBLIC_KEY = '1nn3PNH16FC1lFnPN';
+const EMAILJS_SERVICE_ID = 'fVk58b5vvbtVJ67lZvGwo';
+const EMAILJS_TEMPLATE_ID = 'template_quote'; // Configure this template ID in EmailJS dashboard
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  } else {
+    console.warn('EmailJS SDK not loaded. Forms will run in simulation mode.');
+  }
+
   const form = document.getElementById('quoteForm');
   const productSelect = document.getElementById('productSelect');
   const stateSelect = document.getElementById('stateSelect');
@@ -205,28 +216,13 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       try {
-        /* ──────────────────────────────────────────────
-         * EmailJS Integration
-         * ──────────────────────────────────────────────
-         * To enable email sending, follow these steps:
-         *
-         * 1. Sign up at https://www.emailjs.com/
-         * 2. Create an Email Service (e.g., Gmail)
-         * 3. Create an Email Template with these variables:
-         *    {{fullName}}, {{companyName}}, {{phone}}, {{email}},
-         *    {{state}}, {{country}}, {{product}}, {{quantity}},
-         *    {{cropType}}, {{message}}
-         * 4. Add the EmailJS SDK to your HTML:
-         *    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-         * 5. Uncomment the code below and add your credentials:
-         *
-         * emailjs.init('YOUR_PUBLIC_KEY');
-         * await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
-         *
-         * ────────────────────────────────────────────── */
-
-        // Simulate sending (remove this when EmailJS is configured)
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        if (typeof emailjs !== 'undefined') {
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
+        } else {
+          // Simulation fallback
+          console.log('EmailJS not loaded, simulating submission:', formData);
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        }
 
         // Success
         showToast('Thank you! Your inquiry has been submitted. We will contact you within 24 hours.', 'success');

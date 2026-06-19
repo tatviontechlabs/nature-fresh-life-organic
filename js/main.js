@@ -221,7 +221,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ── Hero Section Image Slider ──
+  const heroSlider = document.getElementById('heroSlider');
+  if (heroSlider) {
+    const slides = heroSlider.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('heroPrev');
+    const nextBtn = document.getElementById('heroNext');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      if (index >= slides.length) index = 0;
+      if (index < 0) index = slides.length - 1;
+
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+          slide.classList.remove('opacity-0', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+          
+          const content = slide.querySelector('.slide-content');
+          if (content) {
+            content.classList.remove('opacity-0', 'translate-y-6');
+            content.classList.add('opacity-100', 'translate-y-0');
+          }
+        } else {
+          slide.classList.remove('active');
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'z-0');
+          
+          const content = slide.querySelector('.slide-content');
+          if (content) {
+            content.classList.remove('opacity-100', 'translate-y-0');
+            content.classList.add('opacity-0', 'translate-y-6');
+          }
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      currentSlide = index;
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 6000);
+    }
+
+    function stopAutoPlay() {
+      if (slideInterval) {
+        clearInterval(slideInterval);
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+        startAutoPlay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+        startAutoPlay();
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showSlide(i);
+        startAutoPlay();
+      });
+    });
+
+    showSlide(0);
+    startAutoPlay();
+  }
+
 });
+
 
 // ── Utility: Show Toast Notification ──
 function showToast(message, type = 'success') {
