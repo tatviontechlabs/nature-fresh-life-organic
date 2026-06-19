@@ -101,7 +101,7 @@ function renderProduct(product, allProducts) {
 
   // WhatsApp message for this product
   const waMessage = `Hello NFL, I am interested in ${product.name}. Please share more details and pricing.`;
-  const waLink = `https://wa.me/918849425517?text=${encodeURIComponent(waMessage)}`;
+  const waLink = `https://wa.me/919638291232?text=${encodeURIComponent(waMessage)}`;
 
   container.innerHTML = `
     <!-- Product Main Section -->

@@ -337,5 +337,5 @@ function showToast(message, type = 'success') {
 
 // ── Utility: Format WhatsApp Link ──
 function getWhatsAppLink(message = 'Hello NFL, I am interested in your products.') {
-  return `https://wa.me/918849425517?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/919638291232?text=${encodeURIComponent(message)}`;
 }
