@@ -1,0 +1,651 @@
+[
+  {
+    "id": 1,
+    "name": "Soni King Organic",
+    "slug": "soni-king-organic",
+    "category": "Organic Fertilizer",
+    "shortDescription": "Comprehensive organic fertilizer blend for improved soil health and crop productivity.",
+    "description": "Soni King Organic is a comprehensive organic fertilizer blend formulated to improve soil health and crop productivity through natural nutrient sources. Enriched with seaweed extract, amino acids, bone powder, and humic substances, it delivers holistic nutrition to your crops while nurturing the soil ecosystem.",
+    "features": [
+      "Enriched with seaweed extract and amino acids",
+      "Contains bone powder for phosphorus supply",
+      "Humic substances for soil conditioning",
+      "100% organic composition",
+      "Suitable for all major crops",
+      "Easy to apply — granular formulation"
+    ],
+    "benefits": [
+      "Improves soil fertility",
+      "Enhances root development",
+      "Increases nutrient availability",
+      "Improves microbial activity",
+      "Supports sustainable farming",
+      "Enhances crop yield and quality"
+    ],
+    "applications": [
+      "Field crops",
+      "Vegetables",
+      "Fruit crops",
+      "Horticulture"
+    ],
+    "specifications": {
+      "Type": "Organic Fertilizer",
+      "Key Ingredients": "Seaweed extract, Amino acids, Bone powder, Humic substances",
+      "Form": "Granular",
+      "Organic Content": "High",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["5 kg", "7 kg", "10 kg"],
+    "usage": "Apply 50–100 kg per acre as basal dose. Mix with soil before sowing or transplanting. Can be used for all seasonal crops.",
+    "image": "assets/images/product-organic-fertilizer.png",
+    "gallery": [
+      "assets/images/product-organic-fertilizer.png"
+    ],
+    "brochure": "assets/brochures/soni-king-organic.pdf",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Kishan Shakti PROM",
+    "slug": "kishan-shakti-prom",
+    "category": "Organic Fertilizer",
+    "shortDescription": "Phosphate Rich Organic Manure for enhanced phosphorus availability and soil productivity.",
+    "description": "Kishan Shakti PROM is an organic phosphate fertilizer designed to improve phosphorus availability and overall soil productivity. With a rich composition of nitrogen, phosphorus, potassium, and organic carbon, it serves as a complete basal nutrition solution for all agricultural crops.",
+    "features": [
+      "Phosphate Rich Organic Manure (PROM)",
+      "Contains N-P-K and organic carbon",
+      "Government-approved formulation",
+      "Ideal for basal application",
+      "Improves long-term soil health",
+      "Eco-friendly phosphorus source"
+    ],
+    "benefits": [
+      "Improves phosphorus availability",
+      "Enhances root development",
+      "Improves soil structure",
+      "Increases nutrient uptake",
+      "Promotes healthy crop growth",
+      "Improves long-term soil fertility"
+    ],
+    "applications": [
+      "All agricultural crops",
+      "Basal application"
+    ],
+    "specifications": {
+      "Type": "Phosphate Rich Organic Manure",
+      "Nitrogen": "0.40%",
+      "Phosphorus": "8.00%",
+      "Potassium": "10%",
+      "Organic Carbon": "8%",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["50 kg"],
+    "usage": "Apply 200–400 kg per acre as basal application before sowing. Mix thoroughly with soil during land preparation.",
+    "image": "assets/images/product-organic-fertilizer.png",
+    "gallery": [
+      "assets/images/product-organic-fertilizer.png"
+    ],
+    "brochure": "assets/brochures/kishan-shakti-prom.pdf",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Carbonix Carbon 14%",
+    "slug": "carbonix-carbon-14",
+    "category": "Soil Conditioner",
+    "shortDescription": "High-carbon soil conditioner to replenish depleted soils and boost biological activity.",
+    "description": "Carbonix Carbon is formulated to replenish depleted soils by increasing organic carbon levels and enhancing biological activity. With 14% organic carbon content, it acts as a powerful soil rejuvenator that improves nutrient absorption, water retention, and microbial population.",
+    "features": [
+      "14% organic carbon content",
+      "Advanced soil rejuvenation formula",
+      "Enhances biological soil activity",
+      "Improves soil water-holding capacity",
+      "Reduces chemical fertilizer dependence",
+      "Compatible with all crop types"
+    ],
+    "benefits": [
+      "Increases organic carbon content",
+      "Improves soil microbial population",
+      "Enhances nutrient absorption",
+      "Improves soil structure",
+      "Reduces dependence on chemical fertilizers",
+      "Enhances water retention"
+    ],
+    "applications": [
+      "All crops",
+      "Soil rejuvenation programs"
+    ],
+    "specifications": {
+      "Type": "Soil Conditioner",
+      "Organic Carbon": "14%",
+      "Form": "Powder / Granular",
+      "Application Method": "Soil application",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Apply 2–4 kg per acre mixed with soil or FYM. Repeat every season for best results.",
+    "image": "assets/images/product-soil-conditioner.png",
+    "gallery": [
+      "assets/images/product-soil-conditioner.png"
+    ],
+    "brochure": "assets/brochures/carbonix-carbon-14.pdf",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "name": "Mico Zyme Gold",
+    "slug": "mico-zyme-gold",
+    "category": "Bio Stimulant",
+    "shortDescription": "Microbial growth enhancer for improved plant health and soil biological activity.",
+    "description": "Mico Zyme Gold is a microbial growth enhancer formulated to improve plant health and soil biological activity. It promotes beneficial microbial colonies in the root zone, enhancing nutrient uptake, plant immunity, and overall crop vigor.",
+    "features": [
+      "Advanced microbial growth technology",
+      "Multi-mode application support",
+      "Enhances beneficial microbe population",
+      "Strengthens plant natural immunity",
+      "Compatible with organic farming",
+      "Proven results across multiple crops"
+    ],
+    "benefits": [
+      "Improves root development",
+      "Enhances plant immunity",
+      "Promotes beneficial microbial activity",
+      "Improves nutrient uptake",
+      "Enhances crop vigor",
+      "Improves overall plant health"
+    ],
+    "applications": [
+      "Seed treatment",
+      "Soil application",
+      "Drip irrigation"
+    ],
+    "specifications": {
+      "Type": "Bio Stimulant",
+      "Form": "Powder",
+      "Application": "Seed treatment / Soil / Drip",
+      "Compatibility": "Organic farming compliant",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg", "10 kg"],
+    "usage": "Seed treatment: 10g per kg of seed. Soil application: 1–2 kg per acre. Drip irrigation: 500g per acre in irrigation water.",
+    "image": "assets/images/product-bio-stimulant.png",
+    "gallery": [
+      "assets/images/product-bio-stimulant.png"
+    ],
+    "brochure": "assets/brochures/mico-zyme-gold.pdf",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Kishan Zinc 33%",
+    "slug": "kishan-zinc-33",
+    "category": "Micronutrient Fertilizer",
+    "shortDescription": "Essential zinc nutrition for healthy crop growth and improved productivity.",
+    "description": "Kishan Zinc 33% supplies essential zinc nutrition required for healthy crop growth and improved productivity. With 33% zinc content, it effectively corrects zinc deficiency — the most common micronutrient deficiency in Indian soils — improving chlorophyll formation, root growth, and crop quality.",
+    "features": [
+      "33% zinc content — high purity",
+      "Corrects zinc deficiency rapidly",
+      "Suitable for soil and foliar application",
+      "Compatible with most fertilizer blends",
+      "Available in multiple pack sizes",
+      "Government-standard formulation"
+    ],
+    "benefits": [
+      "Corrects zinc deficiency",
+      "Enhances chlorophyll formation",
+      "Promotes root growth",
+      "Improves flowering and fruiting",
+      "Reduces yellowing of leaves",
+      "Improves crop quality"
+    ],
+    "applications": [
+      "Cereals",
+      "Fruits",
+      "Vegetables",
+      "Oilseed crops"
+    ],
+    "specifications": {
+      "Type": "Micronutrient Fertilizer",
+      "Zinc Content": "33%",
+      "Form": "Powder",
+      "Application": "Soil / Foliar",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["5 kg", "10 kg", "25 kg"],
+    "usage": "Soil application: 10–25 kg per acre. Foliar spray: 2–3 g per litre of water. Apply during critical growth stages.",
+    "image": "assets/images/product-micronutrient.png",
+    "gallery": [
+      "assets/images/product-micronutrient.png"
+    ],
+    "brochure": "assets/brochures/kishan-zinc-33.pdf",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Zinco Max",
+    "slug": "zinco-max",
+    "category": "Micronutrient Fertilizer",
+    "shortDescription": "Specialized micronutrient formulation for improved nutrient efficiency and crop performance.",
+    "description": "Zinco Max is a specialized micronutrient formulation developed to improve nutrient efficiency and crop performance. It provides a balanced blend of essential micronutrients that enhance photosynthesis, correct deficiencies, and improve overall yield quality.",
+    "features": [
+      "Balanced micronutrient blend",
+      "Improves nutrient use efficiency",
+      "Enhances photosynthetic activity",
+      "Suitable for all major crops",
+      "Easy soil application",
+      "Long-lasting effect in soil"
+    ],
+    "benefits": [
+      "Improves micronutrient availability",
+      "Enhances crop development",
+      "Improves photosynthesis",
+      "Corrects nutrient deficiencies",
+      "Improves yield quality"
+    ],
+    "applications": [
+      "All crops"
+    ],
+    "specifications": {
+      "Type": "Micronutrient Blend",
+      "Form": "Granular",
+      "Application": "Soil application",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["25 kg"],
+    "usage": "Apply 10–25 kg per acre during land preparation or as top dressing. Mix with soil for uniform distribution.",
+    "image": "assets/images/product-micronutrient.png",
+    "gallery": [
+      "assets/images/product-micronutrient.png"
+    ],
+    "brochure": "assets/brochures/zinco-max.pdf",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Sulphomax 90%",
+    "slug": "sulphomax-90",
+    "category": "Micronutrient Fertilizer",
+    "shortDescription": "High-purity sulphur fertilizer for healthy crop development and improved productivity.",
+    "description": "Sulphomax 90% delivers high-purity sulphur to support healthy crop development and improved productivity. Sulphur is a critical secondary nutrient essential for protein synthesis, chlorophyll production, and overall crop quality — especially important for oilseed and pulse crops.",
+    "features": [
+      "90% pure sulphur content",
+      "Essential for protein synthesis",
+      "Supports chlorophyll production",
+      "Critical for oilseed crops",
+      "Easy to apply formulation",
+      "Cost-effective nutrition solution"
+    ],
+    "benefits": [
+      "Improves soil fertility",
+      "Enhances nutrient absorption",
+      "Improves protein synthesis",
+      "Supports chlorophyll production",
+      "Improves crop quality"
+    ],
+    "applications": [
+      "Oilseed crops",
+      "Pulses",
+      "Vegetables",
+      "Cereals"
+    ],
+    "specifications": {
+      "Type": "Sulphur Fertilizer",
+      "Sulphur Content": "90%",
+      "Form": "Powder / Granular",
+      "Application": "Soil application",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Apply 5–10 kg per acre as soil application during land preparation. Mix well with soil or compost.",
+    "image": "assets/images/product-sulphur.png",
+    "gallery": [
+      "assets/images/product-sulphur.png"
+    ],
+    "brochure": "assets/brochures/sulphomax-90.pdf",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Black Gold Humic + Seaweed",
+    "slug": "black-gold-humic-seaweed",
+    "category": "Bio Stimulant",
+    "shortDescription": "Dual-action bio stimulant combining humic acid and seaweed extract for superior plant growth.",
+    "description": "Black Gold combines humic substances and seaweed extract to improve plant growth and soil health. This dual-action bio stimulant enhances root growth, improves stress tolerance, increases chlorophyll content, and promotes beneficial soil microbial activity for healthier, more productive crops.",
+    "features": [
+      "Dual-action: Humic acid + Seaweed extract",
+      "Enhances stress tolerance in crops",
+      "Multi-mode application flexibility",
+      "Improves soil biology naturally",
+      "Organic farming compatible",
+      "Visible results within weeks"
+    ],
+    "benefits": [
+      "Improves root growth",
+      "Enhances stress tolerance",
+      "Increases chlorophyll content",
+      "Improves nutrient absorption",
+      "Enhances crop quality",
+      "Improves soil microbial activity"
+    ],
+    "applications": [
+      "Foliar spray",
+      "Drip irrigation",
+      "Soil application"
+    ],
+    "specifications": {
+      "Type": "Bio Stimulant",
+      "Key Ingredients": "Humic acid, Seaweed extract",
+      "Form": "Liquid / Powder",
+      "Application": "Foliar / Drip / Soil",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Foliar spray: 2–3 ml per litre. Drip irrigation: 1 kg per acre. Soil application: 1–2 kg per acre mixed with FYM or compost.",
+    "image": "assets/images/product-bio-stimulant.png",
+    "gallery": [
+      "assets/images/product-bio-stimulant.png"
+    ],
+    "brochure": "assets/brochures/black-gold-humic-seaweed.pdf",
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "NFL Gold NPK 19:19:19",
+    "slug": "nfl-gold-npk-19-19-19",
+    "category": "Water Soluble Fertilizer",
+    "shortDescription": "Balanced water-soluble NPK fertilizer for complete crop nutrition through fertigation.",
+    "description": "NFL Gold NPK 19:19:19 is a perfectly balanced water-soluble fertilizer providing equal parts nitrogen, phosphorus, and potassium. Ideal for fertigation and foliar application, it ensures balanced crop nutrition during vegetative and flowering stages.",
+    "features": [
+      "Balanced 19:19:19 NPK ratio",
+      "100% water soluble",
+      "Suitable for foliar and fertigation",
+      "Quick nutrient absorption",
+      "Compatible with drip systems",
+      "Premium grade formulation"
+    ],
+    "benefits": [
+      "Balanced crop nutrition",
+      "Improves vegetative growth",
+      "Enhances flowering",
+      "Improves yield and quality"
+    ],
+    "applications": [
+      "Foliar spray",
+      "Fertigation"
+    ],
+    "specifications": {
+      "Type": "Water Soluble Fertilizer",
+      "Nitrogen (N)": "19%",
+      "Phosphorus (P)": "19%",
+      "Potassium (K)": "19%",
+      "Solubility": "100% water soluble",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Foliar spray: 5 g per litre of water. Fertigation: 2–5 kg per acre per application. Apply at 15-day intervals during growth stages.",
+    "image": "assets/images/product-water-soluble.png",
+    "gallery": [
+      "assets/images/product-water-soluble.png"
+    ],
+    "brochure": "assets/brochures/nfl-gold-npk-19-19-19.pdf",
+    "featured": true
+  },
+  {
+    "id": 10,
+    "name": "NFL Gold NPK 00:00:50",
+    "slug": "nfl-gold-npk-00-00-50",
+    "category": "Water Soluble Fertilizer",
+    "shortDescription": "High-potassium water-soluble fertilizer for fruit quality enhancement and stress tolerance.",
+    "description": "NFL Gold NPK 00:00:50 is a potassium-rich water-soluble fertilizer specifically designed for the fruiting stage of crops. With 50% potassium content, it significantly improves fruit quality, color, size, and shelf life while enhancing the crop's stress tolerance.",
+    "features": [
+      "50% potassium — highest K concentration",
+      "100% water soluble",
+      "Ideal for fruiting stage nutrition",
+      "Enhances fruit color and size",
+      "Improves post-harvest shelf life",
+      "Compatible with all fertigation systems"
+    ],
+    "benefits": [
+      "Improves fruit quality",
+      "Enhances color and size",
+      "Improves stress tolerance",
+      "Enhances shelf life"
+    ],
+    "applications": [
+      "Fruiting stage crops",
+      "Fertigation"
+    ],
+    "specifications": {
+      "Type": "Water Soluble Fertilizer",
+      "Nitrogen (N)": "0%",
+      "Phosphorus (P)": "0%",
+      "Potassium (K)": "50%",
+      "Solubility": "100% water soluble",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Fertigation: 2–4 kg per acre during fruiting stage. Foliar spray: 5–10 g per litre. Apply during fruit development phase.",
+    "image": "assets/images/product-water-soluble.png",
+    "gallery": [
+      "assets/images/product-water-soluble.png"
+    ],
+    "brochure": "assets/brochures/nfl-gold-npk-00-00-50.pdf",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "NFL Gold NPK 00:52:34",
+    "slug": "nfl-gold-npk-00-52-34",
+    "category": "Water Soluble Fertilizer",
+    "shortDescription": "Phosphorus-potassium water-soluble fertilizer for flowering and fruit set.",
+    "description": "NFL Gold NPK 00:52:34 is a phosphorus and potassium rich water-soluble fertilizer specifically designed for the flowering stage. With 52% phosphorus and 34% potassium, it promotes prolific flowering, strong fruit set, and early crop establishment.",
+    "features": [
+      "High phosphorus (52%) + potassium (34%)",
+      "100% water soluble",
+      "Flower-stage specific nutrition",
+      "Promotes strong fruit set",
+      "Compatible with drip irrigation",
+      "No nitrogen — avoids excess vegetative growth"
+    ],
+    "benefits": [
+      "Promotes root growth",
+      "Improves flowering",
+      "Enhances fruit set",
+      "Supports early crop establishment"
+    ],
+    "applications": [
+      "Flowering stage",
+      "Drip irrigation"
+    ],
+    "specifications": {
+      "Type": "Water Soluble Fertilizer",
+      "Nitrogen (N)": "0%",
+      "Phosphorus (P)": "52%",
+      "Potassium (K)": "34%",
+      "Solubility": "100% water soluble",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Fertigation: 2–3 kg per acre during flowering. Foliar spray: 3–5 g per litre. Apply at flower initiation stage.",
+    "image": "assets/images/product-water-soluble.png",
+    "gallery": [
+      "assets/images/product-water-soluble.png"
+    ],
+    "brochure": "assets/brochures/nfl-gold-npk-00-52-34.pdf",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "NFL Gold NPK 12:61:00",
+    "slug": "nfl-gold-npk-12-61-00",
+    "category": "Water Soluble Fertilizer",
+    "shortDescription": "High-phosphorus water-soluble fertilizer for early root growth and crop establishment.",
+    "description": "NFL Gold NPK 12:61:00 is a high-phosphorus water-soluble fertilizer designed for initial growth stages. With 61% phosphorus and 12% nitrogen, it encourages early root development, vigorous flowering, and strong crop establishment from the very beginning.",
+    "features": [
+      "Highest phosphorus content (61%)",
+      "12% nitrogen for early growth support",
+      "100% water soluble",
+      "Ideal for transplanting stage",
+      "Promotes vigorous root system",
+      "Quick nutrient availability"
+    ],
+    "benefits": [
+      "Encourages early root growth",
+      "Improves flowering",
+      "Enhances nutrient uptake",
+      "Improves crop establishment"
+    ],
+    "applications": [
+      "Initial growth stage",
+      "Fertigation"
+    ],
+    "specifications": {
+      "Type": "Water Soluble Fertilizer",
+      "Nitrogen (N)": "12%",
+      "Phosphorus (P)": "61%",
+      "Potassium (K)": "0%",
+      "Solubility": "100% water soluble",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Fertigation: 2–3 kg per acre at transplanting. Foliar spray: 3–5 g per litre. Apply during first 2–3 weeks after sowing/transplanting.",
+    "image": "assets/images/product-water-soluble.png",
+    "gallery": [
+      "assets/images/product-water-soluble.png"
+    ],
+    "brochure": "assets/brochures/nfl-gold-npk-12-61-00.pdf",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "name": "Fertichem Water Soluble Fertilizer",
+    "slug": "fertichem-water-soluble",
+    "category": "Water Soluble Fertilizer",
+    "shortDescription": "Balanced water-soluble fertilizer for efficient nutrient delivery during critical crop stages.",
+    "description": "Fertichem is a water-soluble fertilizer designed to deliver essential nutrients efficiently during critical crop stages. It provides balanced nutrition that enhances photosynthesis, improves nutrient efficiency, and supports healthy plant growth throughout the crop cycle.",
+    "features": [
+      "Balanced multi-nutrient formula",
+      "100% water soluble",
+      "Efficient nutrient delivery system",
+      "Suitable for all growth stages",
+      "Compatible with all irrigation systems",
+      "Professional-grade formulation"
+    ],
+    "benefits": [
+      "Provides balanced nutrition",
+      "Enhances photosynthesis",
+      "Improves nutrient efficiency",
+      "Improves crop quality",
+      "Supports healthy plant growth"
+    ],
+    "applications": [
+      "Foliar spray",
+      "Fertigation"
+    ],
+    "specifications": {
+      "Type": "Water Soluble Fertilizer",
+      "Form": "Crystalline powder",
+      "Solubility": "100% water soluble",
+      "Application": "Foliar / Fertigation",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg"],
+    "usage": "Foliar spray: 3–5 g per litre. Fertigation: 2–5 kg per acre. Apply at 10–15 day intervals throughout the crop cycle.",
+    "image": "assets/images/product-water-soluble.png",
+    "gallery": [
+      "assets/images/product-water-soluble.png"
+    ],
+    "brochure": "assets/brochures/fertichem-wsf.pdf",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "Organic Micronutrient Mix",
+    "slug": "organic-micronutrient-mix",
+    "category": "Micronutrient Fertilizer",
+    "shortDescription": "Complete organic micronutrient blend for correcting multiple deficiencies in one application.",
+    "description": "Organic Micronutrient Mix is a comprehensive blend of essential micronutrients formulated using organic-compatible sources. It provides zinc, iron, manganese, copper, and boron in a single application, correcting multiple micronutrient deficiencies and enhancing overall crop health and yield.",
+    "features": [
+      "Multi-micronutrient organic formulation",
+      "Contains Zn, Fe, Mn, Cu, and B",
+      "Single application corrects multiple deficiencies",
+      "Organic farming compatible",
+      "Chelated for better absorption",
+      "Long-lasting soil effect"
+    ],
+    "benefits": [
+      "Corrects multiple deficiencies simultaneously",
+      "Improves overall crop nutrition",
+      "Enhances photosynthetic efficiency",
+      "Improves grain and fruit quality",
+      "Strengthens plant disease resistance",
+      "Boosts crop yield significantly"
+    ],
+    "applications": [
+      "All field crops",
+      "Vegetables",
+      "Fruit orchards",
+      "Plantation crops"
+    ],
+    "specifications": {
+      "Type": "Micronutrient Blend",
+      "Contains": "Zn, Fe, Mn, Cu, B",
+      "Form": "Fine powder",
+      "Application": "Soil / Foliar",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["1 kg", "5 kg"],
+    "usage": "Soil application: 5–10 kg per acre. Foliar spray: 2–3 g per litre. Apply during active growth stages for best results.",
+    "image": "assets/images/product-micronutrient.png",
+    "gallery": [
+      "assets/images/product-micronutrient.png"
+    ],
+    "brochure": "assets/brochures/organic-micronutrient-mix.pdf",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "name": "Bio Growth Enhancer",
+    "slug": "bio-growth-enhancer",
+    "category": "Bio Stimulant",
+    "shortDescription": "Advanced bio stimulant for accelerated plant growth and enhanced crop resilience.",
+    "description": "Bio Growth Enhancer is an advanced bio stimulant formulated with plant growth-promoting microorganisms and natural growth regulators. It accelerates vegetative growth, strengthens crop resilience against environmental stress, and improves overall plant vigor from seedling to harvest.",
+    "features": [
+      "Plant growth-promoting microorganisms",
+      "Natural growth regulators",
+      "Multi-mode application support",
+      "Enhances stress resilience",
+      "Compatible with organic farming",
+      "Results visible within 7–10 days"
+    ],
+    "benefits": [
+      "Accelerates vegetative growth",
+      "Strengthens crop resilience",
+      "Improves root and shoot development",
+      "Enhances nutrient use efficiency",
+      "Increases overall crop yield",
+      "Promotes uniform crop growth"
+    ],
+    "applications": [
+      "Seed treatment",
+      "Soil drenching",
+      "Foliar spray",
+      "Drip irrigation"
+    ],
+    "specifications": {
+      "Type": "Bio Stimulant",
+      "Form": "Liquid / Powder",
+      "Active Ingredients": "Growth-promoting microorganisms, Natural regulators",
+      "Application": "Seed / Soil / Foliar / Drip",
+      "Certification": "ISO 9001:2015"
+    },
+    "packSizes": ["250 ml", "500 ml", "1 litre"],
+    "usage": "Seed treatment: 5 ml per kg seed. Foliar spray: 2–3 ml per litre. Soil drenching: 1 litre per acre. Apply at 15-day intervals.",
+    "image": "assets/images/product-bio-stimulant.png",
+    "gallery": [
+      "assets/images/product-bio-stimulant.png"
+    ],
+    "brochure": "assets/brochures/bio-growth-enhancer.pdf",
+    "featured": false
+  }
+]

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Nature Fresh Life Organic | Organic Fertilizers & Agricultural Inputs</title>
+  <meta name="description" content="Browse our complete range of premium organic fertilizers, micronutrients, water-soluble NPK fertilizers, bio stimulants, and soil conditioners. Request a quote today." />
+  <meta property="og:title" content="NFL Products — Premium Organic Agricultural Inputs" />
+  <meta property="og:description" content="15+ premium products: organic fertilizers, micronutrients, NPK, bio stimulants & soil conditioners." />
+  <meta property="og:image" content="assets/logo/nfl-logo.png" />
+  <link rel="canonical" href="https://naturefreshlifeorganic.com/products.html" />
+  <link rel="icon" type="image/png" href="assets/logo/nfl-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { 'nfl-green': '#8CC63F', 'nfl-dark-green': '#2E7D32', 'nfl-orange': '#F7931E', 'nfl-light': '#F5F7F9' }, fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'], 'display': ['Outfit', 'system-ui', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="bg-white">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="navbar fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3" aria-label="NFL Home">
+          <img src="assets/logo/nfl-logo.png" alt="Nature Fresh Life Organic Logo" class="h-14 w-auto" />
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-gray-700 hover:text-nfl-dark-green font-medium">Home</a>
+          <a href="about.html" class="nav-link text-gray-700 hover:text-nfl-dark-green font-medium">About</a>
+          <a href="products.html" class="nav-link text-gray-700 hover:text-nfl-dark-green font-medium">Products</a>
+          <a href="contact.html" class="nav-link text-gray-700 hover:text-nfl-dark-green font-medium">Contact</a>
+          <a href="quote.html" class="btn-primary text-sm">Request Quote</a>
+        </div>
+        <button id="hamburger" class="hamburger lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+          <span class="hamburger-line block w-6 h-0.5 bg-gray-700"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-gray-700"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-gray-700"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+          <img src="assets/logo/nfl-logo.png" alt="NFL" class="h-12" />
+          <button onclick="document.getElementById('hamburger').click()" class="p-2 text-gray-500" aria-label="Close menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="mobile-nav-link text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Home</a>
+          <a href="about.html" class="mobile-nav-link text-lg font-medium text-gray-700 py-2 border-b border-gray-100">About</a>
+          <a href="products.html" class="mobile-nav-link text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Products</a>
+          <a href="contact.html" class="mobile-nav-link text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Contact</a>
+          <a href="quote.html" class="btn-primary justify-center mt-4">Request Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Page Header -->
+    <section class="page-header pt-32 pb-16 text-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <nav class="text-sm mb-4 text-green-200" aria-label="Breadcrumb">
+          <a href="index.html" class="hover:text-white">Home</a> <span class="mx-2">›</span> <span>Products</span>
+        </nav>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold">Our Products</h1>
+        <p class="text-green-100 mt-3 text-lg max-w-2xl">Premium organic fertilizers and agricultural inputs for every crop and season.</p>
+      </div>
+    </section>
+
+    <!-- Search, Filter, Sort Controls -->
+    <section class="py-8 bg-white border-b border-gray-100 sticky top-20 z-30 backdrop-blur-md bg-white/95">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+          <!-- Search -->
+          <div class="relative w-full lg:w-80">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="search" id="productSearch" placeholder="Search products..." class="form-input pl-10" aria-label="Search products" />
+          </div>
+
+          <div class="flex items-center gap-4 w-full lg:w-auto">
+            <!-- Sort -->
+            <select id="productSort" class="form-input w-auto text-sm" aria-label="Sort products">
+              <option value="name-asc">Name: A → Z</option>
+              <option value="name-desc">Name: Z → A</option>
+              <option value="category">Category</option>
+              <option value="featured">Featured First</option>
+            </select>
+
+            <!-- Product Count -->
+            <span id="productCount" class="text-sm text-gray-500 whitespace-nowrap hidden sm:block"></span>
+          </div>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div id="filterButtons" class="flex flex-wrap gap-2 mt-4">
+          <!-- Populated by products.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="py-12 bg-nfl-light min-h-screen leaf-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Products loaded by JS -->
+          <div class="col-span-full text-center py-12">
+            <div class="skeleton w-72 h-64 mx-auto rounded-2xl mb-4"></div>
+            <p class="text-gray-400">Loading products...</p>
+          </div>
+        </div>
+
+        <!-- No Results State -->
+        <div id="noResults" class="hidden text-center py-16">
+          <div class="text-6xl mb-4">🔍</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">No Products Found</h3>
+          <p class="text-gray-600 mb-6">Try adjusting your search or filter criteria.</p>
+          <button onclick="document.getElementById('productSearch').value=''; document.getElementById('productSearch').dispatchEvent(new Event('input'));" class="btn-secondary">
+            Clear Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner py-16 relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Can't Find What You Need?</h2>
+        <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">Contact us for custom agricultural solutions, bulk orders, and expert product recommendations.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="quote.html" class="btn-orange text-base px-8 py-4 justify-center">Request a Quote</a>
+          <a href="https://wa.me/918849425517?text=Hello%20NFL,%20I%20need%20help%20finding%20the%20right%20product." target="_blank" rel="noopener" class="btn-whatsapp text-base px-8 py-4 justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <img src="assets/logo/nfl-logo.png" alt="NFL" class="h-16 mb-4 brightness-0 invert" />
+          <p class="text-gray-400 text-sm">Premium organic fertilizers & agricultural inputs. ISO 9001:2015 Certified.</p>
+        </div>
+        <div>
+          <h4 class="font-display text-white font-bold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">About Us</a></li>
+            <li><a href="products.html" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Products</a></li>
+            <li><a href="quote.html" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Request Quote</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-white font-bold text-lg mb-4">Top Products</h4>
+          <ul class="space-y-2">
+            <li><a href="product.html?id=1" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Soni King Organic</a></li>
+            <li><a href="product.html?id=9" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">NFL Gold NPK 19:19:19</a></li>
+            <li><a href="product.html?id=5" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">Kishan Zinc 33%</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-white font-bold text-lg mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li><a href="tel:+918849425517" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">+91 88494 25517</a></li>
+            <li><a href="mailto:support@naturefreshlifeorganic.com" class="text-gray-400 hover:text-nfl-green transition-colors text-sm">support@naturefreshlifeorganic.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p class="text-gray-500 text-sm">&copy; 2025 Nature Fresh Life Organic. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918849425517?text=Hello%20NFL,%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
