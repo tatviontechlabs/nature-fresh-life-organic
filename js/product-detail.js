@@ -312,6 +312,41 @@ function updatePageMeta(product) {
   document.title = `${product.name} — Nature Fresh Life Organic`;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.content = product.shortDescription;
+
+  // Dynamic SEO JSON-LD Product Schema
+  const existingSchema = document.getElementById('dynamicProductSchema');
+  if (existingSchema) {
+    existingSchema.remove();
+  }
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "image": window.location.origin + '/' + product.image,
+    "description": product.description,
+    "category": product.category,
+    "brand": {
+      "@type": "Brand",
+      "name": "Nature Fresh Life Organic"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "price": "0.00",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "0.00",
+        "priceCurrency": "INR"
+      }
+    }
+  };
+
+  const script = document.createElement('script');
+  script.id = 'dynamicProductSchema';
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify(schema);
+  document.head.appendChild(script);
 }
 
 // ── Show Error State ──
