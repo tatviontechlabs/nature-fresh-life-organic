@@ -172,6 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: var(--nfl-green);
+  margin-top: 10px;
 }
 
 .product-card .product-image {
