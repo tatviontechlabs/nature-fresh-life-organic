@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       allProducts = await response.json();
       renderFilters();
       applyFilters();
+      injectProductListSchema();
     } catch (error) {
       console.error('Error loading products:', error);
       productGrid.innerHTML = `
@@ -37,6 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     }
+  }
+
+  // ── Inject ItemList structured data (SEO) ──
+  function injectProductListSchema() {
+    const holder = document.getElementById('productListSchema');
+    if (!holder || !allProducts.length) return;
+    const base = 'https://naturefreshlifeorganic.com/';
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      'name': 'Nature Fresh Life Organic — Product Catalog',
+      'numberOfItems': allProducts.length,
+      'itemListElement': allProducts.map((p, i) => ({
+        '@type': 'ListItem',
+        'position': i + 1,
+        'name': p.name,
+        'url': `${base}product.html?id=${p.id}`
+      }))
+    };
+    holder.textContent = JSON.stringify(schema);
   }
 
   // ── Render Category Filter Buttons ──

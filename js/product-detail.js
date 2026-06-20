@@ -307,39 +307,83 @@ function getCategoryBadgeClass(category) {
   return map[category] || 'badge-organic';
 }
 
-// ── Update Page Title & Meta ──
+// ── Update Page Title, Meta & Structured Data (SEO) ──
 function updatePageMeta(product) {
-  document.title = `${product.name} — Nature Fresh Life Organic`;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = product.shortDescription;
+  const origin = 'https://naturefreshlifeorganic.com';
+  const pageUrl = `${origin}/product.html?id=${product.id}`;
+  const imageUrl = origin + '/' + product.image;
+  const title = `${product.name} — ${product.category} | Nature Fresh Life Organic`;
+  const desc = product.shortDescription;
 
-  // Dynamic SEO JSON-LD Product Schema
-  const existingSchema = document.getElementById('dynamicProductSchema');
-  if (existingSchema) {
-    existingSchema.remove();
+  document.title = title;
+
+  // Helper: create-or-update a <meta> tag by name or property.
+  function upsertMeta(attr, key, value) {
+    let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', value);
   }
+
+  upsertMeta('name', 'description', desc);
+  upsertMeta('name', 'keywords', `${product.name}, ${product.category}, organic fertilizer, ${product.name} price, buy ${product.name}, NFL`);
+
+  upsertMeta('property', 'og:title', title);
+  upsertMeta('property', 'og:description', desc);
+  upsertMeta('property', 'og:image', imageUrl);
+  upsertMeta('property', 'og:url', pageUrl);
+  upsertMeta('property', 'og:type', 'product');
+  upsertMeta('name', 'twitter:title', title);
+  upsertMeta('name', 'twitter:description', desc);
+  upsertMeta('name', 'twitter:image', imageUrl);
+
+  // Canonical → this specific product
+  let canonical = document.head.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    document.head.appendChild(canonical);
+  }
+  canonical.href = pageUrl;
+
+  // ── Structured Data: Product + Breadcrumb ──
+  // No fake price (catalog is quote-based) — an offer with InStock availability
+  // and a URL to request a quote, which is accurate and avoids a misleading ₹0.
+  document.querySelectorAll('#dynamicProductSchema').forEach(s => s.remove());
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.name,
-    "image": window.location.origin + '/' + product.image,
-    "description": product.description,
-    "category": product.category,
-    "brand": {
-      "@type": "Brand",
-      "name": "Nature Fresh Life Organic"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "price": "0.00",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "price": "0.00",
-        "priceCurrency": "INR"
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": product.name,
+        "image": imageUrl,
+        "description": product.description,
+        "category": product.category,
+        "sku": product.slug || String(product.id),
+        "url": pageUrl,
+        "brand": { "@type": "Brand", "name": "Nature Fresh Life Organic" },
+        "manufacturer": { "@type": "Organization", "name": "Nature Fresh Life Organic" },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "INR",
+          "url": `${origin}/quote.html?product=${encodeURIComponent(product.name)}`,
+          "seller": { "@type": "Organization", "name": "Nature Fresh Life Organic" }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": origin + "/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": origin + "/products.html" },
+          { "@type": "ListItem", "position": 3, "name": product.name, "item": pageUrl }
+        ]
       }
-    }
+    ]
   };
 
   const script = document.createElement('script');
