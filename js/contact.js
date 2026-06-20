@@ -2,22 +2,15 @@
    NFL — contact.js
    Contact form functionality:
    - Client-side validation
-   - EmailJS integration
+   - FormSubmit.co email integration (no account / no login required)
    - Toast notifications
    ============================================ */
 
-const EMAILJS_PUBLIC_KEY = '1nn3PNH16FC1lFnPN';
-const EMAILJS_SERVICE_ID = 'fVk58b5vvbtVJ67lZvGwo';
-const EMAILJS_TEMPLATE_ID = 'template_contact'; // Configure this template ID in EmailJS dashboard
+/* Email delivery is handled by sendInquiry() in main.js:
+   primary = EmailJS, automatic fallback = FormSubmit.co.
+   getISTTimestamp() also lives in main.js. */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize EmailJS
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  } else {
-    console.warn('EmailJS SDK not loaded. Forms will run in simulation mode.');
-  }
-
   const form = document.getElementById('contactForm');
 
   // ── Form Validation Rules ──
@@ -141,14 +134,46 @@ document.addEventListener('DOMContentLoaded', () => {
         Sending...
       `;
 
+      const istTime = getISTTimestamp();
+      const subject = `📩 New Contact Message from ${formData.fullName} — NFL Website`;
+
+      // Pre-formatted HTML body for the EmailJS template ({{message}} variable).
+      const messageHtml = `
+        <h2 style="margin:0 0 12px;color:#2E7D32;font-family:Arial,sans-serif;">New Contact Message</h2>
+        <table cellpadding="8" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;color:#333;">
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Name</td><td>${formData.fullName}</td></tr>
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Email</td><td>${formData.email}</td></tr>
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Phone</td><td>${formData.phone || '—'}</td></tr>
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Subject</td><td>${formData.subject || 'General Inquiry'}</td></tr>
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Message</td><td>${formData.message}</td></tr>
+          <tr><td style="font-weight:bold;background:#f0fdf4;">Submitted At</td><td>${istTime}</td></tr>
+        </table>`;
+
+      // Params for EmailJS (primary).
+      const emailjsParams = {
+        subject,
+        from_name: formData.fullName,
+        reply_to: formData.email,
+        to_email: 'support@naturefreshlifeorganic.com',
+        message: messageHtml
+      };
+
+      // Payload for FormSubmit (fallback).
+      const formsubmitPayload = {
+        'Name': formData.fullName,
+        'Email': formData.email,
+        'Phone': formData.phone || '—',
+        'Subject': formData.subject || 'General Inquiry',
+        'Message': formData.message,
+        'Submitted At (IST)': istTime,
+        _subject: subject,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: formData.email
+      };
+
       try {
-        if (typeof emailjs !== 'undefined') {
-          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
-        } else {
-          // Simulation fallback
-          console.log('EmailJS not loaded, simulating submission:', formData);
-          await new Promise(resolve => setTimeout(resolve, 1500));
-        }
+        await sendInquiry(emailjsParams, formsubmitPayload);
 
         // Success
         showToast('Thank you! Your message has been sent. We will respond shortly.', 'success');

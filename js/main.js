@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Sticky Header with Scroll Shadow ──
   const navbar = document.getElementById('navbar');
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  let lastScrollY = 0;
 
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    lastScrollY = currentScrollY;
   }, { passive: true });
 
   // ── Scroll to Top ──
@@ -235,28 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (index >= slides.length) index = 0;
       if (index < 0) index = slides.length - 1;
 
+      // Visibility + content reveal are handled entirely by the `.active`
+      // class via CSS — this keeps the crossfade clean and flicker-free.
       slides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.add('active');
-          slide.classList.remove('opacity-0', 'z-0');
-          slide.classList.add('opacity-100', 'z-10');
-          
-          const content = slide.querySelector('.slide-content');
-          if (content) {
-            content.classList.remove('opacity-0', 'translate-y-6');
-            content.classList.add('opacity-100', 'translate-y-0');
-          }
-        } else {
-          slide.classList.remove('active');
-          slide.classList.remove('opacity-100', 'z-10');
-          slide.classList.add('opacity-0', 'z-0');
-          
-          const content = slide.querySelector('.slide-content');
-          if (content) {
-            content.classList.remove('opacity-100', 'translate-y-0');
-            content.classList.add('opacity-0', 'translate-y-6');
-          }
-        }
+        slide.classList.toggle('active', i === index);
       });
 
       dots.forEach((dot, i) => {
@@ -300,6 +280,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Pause autoplay while the user is interacting with the hero
+    heroSlider.addEventListener('mouseenter', stopAutoPlay);
+    heroSlider.addEventListener('mouseleave', startAutoPlay);
+
     showSlide(0);
     startAutoPlay();
   }
@@ -338,4 +322,83 @@ function showToast(message, type = 'success') {
 // ── Utility: Format WhatsApp Link ──
 function getWhatsAppLink(message = 'Hello NFL, I am interested in your products.') {
   return `https://wa.me/919638291232?text=${encodeURIComponent(message)}`;
+}
+
+/* ============================================
+   SHARED EMAIL DELIVERY
+   Primary  : EmailJS  (clean format, IST time, no third-party branding)
+   Fallback : FormSubmit.co  (used only if EmailJS errors or hits its quota)
+   ============================================ */
+
+// EmailJS browser SDK uses the PUBLIC key only. The private key is intentionally
+// NOT stored here — it must never be exposed in client-side code.
+const NFL_EMAILJS = {
+  publicKey: 'dE1CyyI5KZf2Aska0',
+  serviceId: 'service_hizjmj6',    // ← EmailJS dashboard → Email Services → Service ID
+  templateId: 'template_si0bzbi'   // ← EmailJS dashboard → Email Templates → Template ID
+};
+
+// Fallback provider — submissions land in this inbox if EmailJS is unavailable.
+const NFL_FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/support@naturefreshlifeorganic.com';
+
+// Date/time formatted in India Standard Time, regardless of the visitor's device.
+function getISTTimestamp() {
+  return new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    day: '2-digit', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: true
+  }) + ' IST';
+}
+
+let _emailjsInitialised = false;
+function _initEmailJS() {
+  if (_emailjsInitialised) return true;
+  if (typeof emailjs === 'undefined') return false;
+  try {
+    emailjs.init({ publicKey: NFL_EMAILJS.publicKey });
+    _emailjsInitialised = true;
+    return true;
+  } catch (e) {
+    console.warn('EmailJS init failed:', e);
+    return false;
+  }
+}
+
+// True only once real IDs (not the placeholders) have been filled in above.
+function _emailjsConfigured() {
+  return NFL_EMAILJS.serviceId && !NFL_EMAILJS.serviceId.startsWith('YOUR_') &&
+         NFL_EMAILJS.templateId && !NFL_EMAILJS.templateId.startsWith('YOUR_');
+}
+
+/**
+ * Send an inquiry, trying EmailJS first and falling back to FormSubmit.
+ * @param {object} emailjsParams    Template params for EmailJS.
+ * @param {object} formsubmitPayload JSON body for the FormSubmit fallback.
+ * @returns {Promise<'emailjs'|'formsubmit'>} which provider delivered it.
+ * @throws if BOTH providers fail.
+ */
+async function sendInquiry(emailjsParams, formsubmitPayload) {
+  // 1) Primary — EmailJS
+  if (_emailjsConfigured() && _initEmailJS()) {
+    try {
+      await emailjs.send(NFL_EMAILJS.serviceId, NFL_EMAILJS.templateId, emailjsParams);
+      return 'emailjs';
+    } catch (err) {
+      // Quota reached / rate-limited / network — quietly fall through to backup.
+      console.warn('EmailJS failed — falling back to FormSubmit.', err);
+    }
+  }
+
+  // 2) Fallback — FormSubmit.co
+  const res = await fetch(NFL_FORMSUBMIT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formsubmitPayload)
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.success === false || data.success === 'false') {
+    throw new Error(data.message || 'All email providers failed');
+  }
+  return 'formsubmit';
 }
