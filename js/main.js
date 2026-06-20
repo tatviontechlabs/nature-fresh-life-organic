@@ -288,6 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
   }
 
+  // ── Multi-language switcher (Google Translate) ──
+  nflInitLanguageSwitcher();
+
 });
 
 
@@ -322,6 +325,90 @@ function showToast(message, type = 'success') {
 // ── Utility: Format WhatsApp Link ──
 function getWhatsAppLink(message = 'Hello NFL, I am interested in your products.') {
   return `https://wa.me/919638291232?text=${encodeURIComponent(message)}`;
+}
+
+/* ============================================
+   MULTI-LANGUAGE (Google Translate)
+   Default English; switch to Hindi / Gujarati.
+   ============================================ */
+
+// Called by the Google Translate script once it loads (must be global).
+function googleTranslateElementInit() {
+  /* global google */
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,hi,gu',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+// Read the currently-selected language from Google's cookie (default 'en').
+function nflGetCurrentLang() {
+  const match = document.cookie.match(/googtrans=\/en\/(\w+)/);
+  return match ? match[1] : 'en';
+}
+
+// Switch language by setting Google's cookie, then reloading so it applies.
+function nflSetLanguage(lang) {
+  const host = location.hostname;
+  // Clear any existing preference first (both host- and domain-scoped).
+  document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+  document.cookie = 'googtrans=;path=/;domain=.' + host + ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+  if (lang && lang !== 'en') {
+    document.cookie = 'googtrans=/en/' + lang + ';path=/';
+    document.cookie = 'googtrans=/en/' + lang + ';path=/;domain=.' + host;
+  }
+  location.reload();
+}
+
+// Inject the hidden translate container + script and the navbar/menu switchers.
+function nflInitLanguageSwitcher() {
+  // 1) Hidden Google Translate element + loader (once per page).
+  if (!document.getElementById('google_translate_element')) {
+    const el = document.createElement('div');
+    el.id = 'google_translate_element';
+    el.className = 'notranslate';
+    document.body.appendChild(el);
+
+    const s = document.createElement('script');
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    s.async = true;
+    document.body.appendChild(s);
+  }
+
+  const current = nflGetCurrentLang();
+
+  function buildSwitcher(extraClass) {
+    const wrap = document.createElement('div');
+    wrap.className = 'nfl-lang notranslate ' + (extraClass || '');
+    wrap.setAttribute('translate', 'no');
+    const select = document.createElement('select');
+    select.className = 'nfl-lang-select';
+    select.setAttribute('aria-label', 'Select language');
+    select.innerHTML = `
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="gu">ગુજરાતી</option>`;
+    select.value = current;
+    select.addEventListener('change', () => nflSetLanguage(select.value));
+    wrap.appendChild(select);
+    return wrap;
+  }
+
+  // 2) Desktop navbar — before the "Request Quote" button.
+  const desktopNav = document.querySelector('#navbar .lg\\:flex');
+  if (desktopNav && !desktopNav.querySelector('.nfl-lang')) {
+    const quoteBtn = desktopNav.querySelector('.btn-primary');
+    const sw = buildSwitcher();
+    if (quoteBtn) desktopNav.insertBefore(sw, quoteBtn);
+    else desktopNav.appendChild(sw);
+  }
+
+  // 3) Mobile slide-in menu — at the top of the links list.
+  const mobileLinks = document.querySelector('#mobileMenu .flex.flex-col');
+  if (mobileLinks && !mobileLinks.querySelector('.nfl-lang')) {
+    mobileLinks.insertBefore(buildSwitcher('mb-2'), mobileLinks.firstChild);
+  }
 }
 
 /* ============================================
