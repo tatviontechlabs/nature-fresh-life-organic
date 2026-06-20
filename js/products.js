@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update product count
       if (productCount) {
-        productCount.textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''} found`;
+        productCount.textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
       }
     }, 200);
   }
