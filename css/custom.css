@@ -42,6 +42,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  /* The off-canvas mobile menu is position:fixed, so it escapes body's
+     overflow clip and scrolls <html> horizontally (white strip on mobile).
+     Clipping here stops that page-level horizontal scroll on every page. */
+  overflow-x: hidden;
 }
 
 body {
@@ -176,11 +180,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-card .product-image img {
-  transition: transform var(--transition-slow);
+  transition: transform 0.45s ease;
+  /* Anchor the zoom to the top so a ~1rem gap is always kept above the image
+     on hover (it grows downward instead of eating the top space). */
+  transform-origin: center top;
 }
 
+/* Subtle, contained zoom — product packshots use object-contain, so a large
+   scale made them look oversized/cropped. A gentle lift reads as premium. */
 .product-card:hover .product-image img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* ── Category Badge ── */
@@ -509,6 +518,8 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   background: #ffffff !important;
+  max-width: 85vw;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -609,9 +620,25 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 50%;
 }
 
+/* ── Headings on dark / coloured sections ──
+   The global h1–h6 rule forces a near-black colour, so any heading without an
+   explicit colour class rendered dark on green backgrounds (page titles,
+   "Quality at Every Step", etc.). Inside a `.text-white` section, headings
+   should follow the section and be white. */
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6 {
+  color: #ffffff;
+}
+
 /* ── Page Header Banner ── */
 .page-header {
-  background: var(--nfl-green-gradient);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.14), transparent 55%),
+    var(--nfl-green-gradient);
   position: relative;
   overflow: hidden;
 }
@@ -622,6 +649,22 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
+}
+
+/* Clean brand accent under each page title */
+.page-header h1 {
+  display: inline-block;
+  position: relative;
+}
+
+.page-header h1::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 2px;
+  background: var(--nfl-orange);
 }
 
 /* ── Form Styles ── */
@@ -1003,5 +1046,93 @@ textarea:focus-visible {
   background-color: var(--nfl-green) !important;
   width: 24px !important;
   border-radius: 6px !important;
+}
+
+/* On small screens the hero content is tall; centering pushed the top badge
+   (🌱 ISO 9001…) up under the fixed header. Top-align it and clear the navbar. */
+@media (max-width: 1023px) {
+  .hero-slide {
+    align-items: flex-start !important;
+  }
+  .hero-slide > div {
+    padding-top: 7rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+/* ============================================
+   MULTI-LANGUAGE (Google Translate)
+   ============================================ */
+
+/* Hide Google's injected chrome (top banner, tooltips) so the page stays clean */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.skiptranslate iframe {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+  position: static !important;
+}
+#google_translate_element {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  height: 0;
+  overflow: hidden;
+}
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+/* Our own language switcher (globe pill dropdown) */
+.nfl-lang {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nfl-lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(140, 198, 63, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 12px center, right 10px center;
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  border-radius: 9999px;
+  padding: 8px 30px 8px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--nfl-dark-green);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.nfl-lang-select:hover {
+  background-color: rgba(140, 198, 63, 0.2);
+  border-color: var(--nfl-green);
+}
+
+.nfl-lang-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(140, 198, 63, 0.2);
+}
+
+/* Full-width inside the mobile slide-in menu */
+.mobile-menu .nfl-lang,
+.mobile-menu .nfl-lang-select {
+  width: 100%;
 }
 
