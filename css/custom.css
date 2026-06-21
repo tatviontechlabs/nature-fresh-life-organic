@@ -178,6 +178,127 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 14px;
 }
 
+/* ── Flippable Product Card ── */
+.flip-card {
+  perspective: 1500px;
+  height: 480px;
+  transition: transform var(--transition-base);
+}
+
+.flip-card:hover {
+  transform: translateY(-8px);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0.15, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--nfl-green);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front .product-image {
+  overflow: hidden;
+}
+
+.flip-card-front .product-image img {
+  transition: transform 0.45s ease;
+  transform-origin: center top;
+}
+
+.flip-card:hover .flip-card-front .product-image img {
+  transform: scale(1.05);
+}
+
+/* Round flip toggle button (top-right of each face) */
+.flip-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  color: var(--nfl-dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), transform 0.4s ease;
+}
+
+.flip-toggle:hover {
+  background: var(--nfl-dark-green);
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.flip-card-back-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* ── Product language toggle (EN / ગુજરાતી) ── */
+.lang-toggle {
+  display: inline-flex;
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 9999px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.lang-toggle button {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--nfl-text);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.lang-toggle button.active {
+  background: var(--nfl-dark-green);
+  color: #ffffff;
+}
+
 .product-card .product-image {
   overflow: hidden;
   position: relative;
