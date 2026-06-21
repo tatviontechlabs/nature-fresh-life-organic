@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stopAutoPlay();
       slideInterval = setInterval(() => {
         showSlide(currentSlide + 1);
-      }, 6000);
+      }, 9000);
     }
 
     function stopAutoPlay() {
