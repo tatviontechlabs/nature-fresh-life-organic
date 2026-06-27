@@ -165,39 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(c => counterObserver.observe(c));
   }
 
-  // ── Testimonial Carousel (simple auto-advance) ──
-  const carousel = document.getElementById('testimonialCarousel');
-  if (carousel) {
-    const slides = carousel.querySelectorAll('.testimonial-slide');
-    const dots = carousel.querySelectorAll('.carousel-dot');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
-        slide.style.opacity = i === index ? '1' : '0';
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    }
-
-    // Auto-advance every 5 seconds
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
-
-    // Dot click navigation
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentSlide = i;
-        showSlide(currentSlide);
-      });
-    });
-
-    showSlide(0);
-  }
+  // ── Testimonial Carousel ──
+  // Rendered data-driven from the inline script in index.html (NFL_TESTIMONIALS),
+  // so the markup-based logic that used to live here was removed.
 
   // ── Featured Products Carousel ──
   const featuredCarousel = document.getElementById('featuredCarousel');
