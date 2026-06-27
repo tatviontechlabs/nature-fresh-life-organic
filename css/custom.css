@@ -712,6 +712,24 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px);
 }
 
+/* Testimonial carousel dots — active dot reflects the current review */
+.carousel-dot {
+  background-color: #d1d5db;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background-color: #9ca3af;
+}
+
+.carousel-dot.active {
+  background-color: var(--nfl-green);
+  width: 28px;
+  border-radius: 9999px;
+}
+
 /* ── Timeline ── */
 .timeline-item {
   position: relative;
